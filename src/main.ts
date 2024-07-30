@@ -14,6 +14,7 @@ async function bootstrap() {
     .setTitle('NEST REST API')
     .setDescription('The NEST REST API description')
     .setVersion('0.1')
+    .addBearerAuth()
     .build();
 
   const document = SwaggerModule.createDocument(app, config);
