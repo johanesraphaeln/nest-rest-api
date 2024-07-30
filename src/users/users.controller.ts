@@ -49,7 +49,7 @@ export class UsersController {
 
   @Delete(':id')
   @ApiOkResponse({ type: UserEntity })
-  remove(@Param('id', ParseIntPipe) id: number) {
-    return this.usersService.remove(id);
+  async remove(@Param('id', ParseIntPipe) id: number) {
+    return new UserEntity(await this.usersService.remove(id));
   }
 }
